@@ -162,16 +162,25 @@ params:
       category: North Coast
     - name: Backup Gateway
       category: North Coast
-    - name: Website
+    - name: Services web (portail client, site web public)
       description: The web frontend for the application.
       category: Uncategorized
       link: https://example.com/
-    - name: API
-      description: The guts of the application.
+    - name: Support client
+      description: The suport service.
       category: Uncategorized
-    - name: Media Proxy
+    - name: Services d'accès fibre (FTTx)
       description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
       category: Uncategorized
+       - name: Backbone (AS328840)
+      description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
+      category: Uncategorized
+    - name: Services d'hébergement (Domaines, mutu) 
+      description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
+      category: Uncategorized 
+        - name: Services Cloud 
+      description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
+      category: Uncategorized 
 
   # What date format to use?
   #
