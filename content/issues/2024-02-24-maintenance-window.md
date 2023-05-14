@@ -12,3 +12,4 @@ Start Time: 2023-05-16 23:15:00 UTC
 End Time: 2023-05-17 03:15:00 UTC
 
 
+Event Type: Software Upgrade
