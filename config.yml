@@ -143,10 +143,10 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   categories:
-    - name: North Coast
-      description: The main servers are located here.
+    - name: Cote d'ivoire
+      description: Cote D'ivoire Datacenter.
       closed: true
-    - name: Empty Category
+    - name: Cameroun
     - name: Uncategorized
       untitled: true
 
@@ -158,9 +158,9 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   systems:
-    - name: Gateway
-      category: North Coast
-    - name: Backup Gateway
+    - name: IP Transit
+      category: Cote d'ivoire
+    - name: Main Gateway
       category: North Coast
     - name: Services web (portail client, site web public)
       description: The web frontend for the application.
