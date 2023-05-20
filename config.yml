@@ -43,7 +43,7 @@
 
 # What is your status page called?
 # Shows up in the browser bar and meta tags
-title: Ungleich Status
+title: ST DIGITAL Status
 
 # Should posts, which have a publish date
 # from the future, be built? Useful for
@@ -90,7 +90,7 @@ defaultContentLanguage: en
 # localhost should automatically work.
 #
 # Example: https://status.example.com/
-baseURL: https://status.ungleich.ch/
+baseURL: https://status.stdigital.network/
 
 ############################################################
 # +------------------------------------------------------+ #
@@ -227,9 +227,9 @@ params:
   # Format:
   customTabs:
     - name: UptimeRobot
-      link: https://uptimerobot.ungleich.ch
+      link: https://uptimerobot.stdigital.network
     - name: Chat
-      link: https://chat.with.ungleich.ch
+      link: https://chat.with.stdigital.network
 
   # Disable complex server-side
   # calculations that may impact
