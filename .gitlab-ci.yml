@@ -1,28 +1,37 @@
-# SERVING CSTATE ON GITLAB PAGES
-# Introduced in v4.2.1
-#
-# This file is very similar to the existing GitLab template, and might need editing before it works on your project.
-#
-# All available Hugo versions are listed here:
-# https://gitlab.com/pages/hugo/container_registry
-#
-# cState uses Hugo Extended.
-image: registry.gitlab.com/pages/hugo/hugo_extended:0.100.2
+stages:
+  - build
+  - deploy
 
+image: fedora:latest
 variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+  BUILDDIR: "build/"
 
-test:
+build:
+  stage: build
+  before_script:
+    - dnf install -y hugo git
   script:
-    - hugo
-  except:
-    - master
-
-pages:
-  script:
+    - git submodule update --init --recursive
     - hugo
   artifacts:
+    expire_in: 12 hours
     paths:
-      - public
+      - "public/"
+
+deploy:
+  stage: deploy
   only:
     - master
+  environment:
+    name: production
+    url: https://status.ungleich.ch/
+  before_script:
+    - dnf install -y openssh-clients
+    # Configure the SSH Agent
+    - eval $(ssh-agent -s)
+    - echo "$CD_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - echo "$CD_SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - sftp -r fnux@staticwebhosting.ungleich.ch <<< "put -r public/* public_html/status"
