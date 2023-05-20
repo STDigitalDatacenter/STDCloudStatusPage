@@ -133,15 +133,23 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   systems:
-    - name: Virtual Machines (DatacenterLight, IPv6OnlyHosting)
+    - name: Virtual Machines,Dedicated servers
       category: Services
-    - name: Managed Web Hosting (Static, Django, Rails)
+    - name: Public cloud 
       category: Services
-    - name: Managed Cloud (Nextcloud)
+    - name: Private Cloud 
+      category: Services
+    - name: Managed Web Hosting 
+      category: Services
+    - name: Managed Collaboration (Nextcloud)
       category: Services
     - name: Managed Chat (Matrix, Mattermost)
       category: Services
-    - name: Network
+    - name: Managed VPN (OpenVPN, Wireguard)
+      category: Services
+    - name: IP Transit Network
+      category: Infrastructure
+     - name: EDGE Network
       category: Infrastructure
     - name: Storage Cluster(s)
       category: Infrastructure
