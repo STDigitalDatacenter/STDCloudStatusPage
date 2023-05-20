@@ -24,7 +24,7 @@ deploy:
     - master
   environment:
     name: production
-    url: https://status.ungleich.ch/
+    url: https://status.stdigital.network/
   before_script:
     - dnf install -y openssh-clients
     # Configure the SSH Agent
@@ -34,4 +34,4 @@ deploy:
     - echo "$CD_SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - sftp -r fnux@staticwebhosting.ungleich.ch <<< "put -r public/* public_html/status"
+    - sftp -r  <<< "put -r public/* public_html/status"
